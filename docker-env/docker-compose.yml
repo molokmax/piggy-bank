@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  mssql:
+    image: bank_mssql_image
+    container_name: bank_mssql
+    build:
+      context: ./mssql
+      dockerfile: Dockerfile

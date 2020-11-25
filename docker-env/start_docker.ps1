@@ -1,0 +1,1 @@
+docker-compose -p piggy-bank up -d 
