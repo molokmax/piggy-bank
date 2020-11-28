@@ -8,9 +8,9 @@ $env:ASPNETCORE_ENVIRONMENT="Development"
 $DatabaseName="BiggyBank"
 $DbUserName="SA"
 $DbPass="f#Vf8sYBF2"
-$MigrationTool="backend/RunMigration/bin/Debug/netcoreapp3.1/RunMigration.dll"
+$MigrationTool="RunMigration/bin/Debug/netcoreapp3.1/RunMigration.dll"
 
-cd ..
+Set-Location ../backend
 
 if ($Recreate) {
 	Write-Host "Recreate Database $DatabaseName"
@@ -25,4 +25,4 @@ if ($Migration) {
     dotnet $MigrationTool --profile Development
 }
 
-cd docker-env
+Set-Location ../docker-env
