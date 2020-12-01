@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Persist;
+using Handler;
+using Api.StartUp.Binder;
 
 namespace ApiStartUp
 {
@@ -26,9 +28,13 @@ namespace ApiStartUp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.ModelBinderProviders.Insert(0, new BinderProvider());
+            });
 
             services.AddDatabaseContext(Configuration);
+            services.AddHandlers(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

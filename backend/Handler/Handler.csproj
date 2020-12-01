@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Api.Model\Api.Model.csproj" />
     <ProjectReference Include="..\Persist\Persist.csproj" />
   </ItemGroup>
-
 
 </Project>

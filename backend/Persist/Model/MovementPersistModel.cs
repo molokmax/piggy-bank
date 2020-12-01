@@ -12,8 +12,8 @@ namespace Persist.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public long Id { get; set; }
-        public long SourceStoreItemId { get; set; }
-        public long DestinationStoreItemId { get; set; }
+        public long? SourceStoreItemId { get; set; }
+        public long? DestinationStoreItemId { get; set; }
         public double Quantity { get; set; }
         public string Comment { get; set; }
         public DateTime MoveDate { get; set; }
